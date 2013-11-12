@@ -30,7 +30,7 @@ module.exports = {
     }
   },
   production: {
-    db: 'mongodb://jc:jc@ds063307.mongolab.com:63307/jobsearch',
+    db: 'mongodb://jc:jc@ds053818.mongolab.com:53818/jobsearch',
     root: rootPath,
     notifier: notifier,
     app: {
