@@ -1,0 +1,246 @@
+<div class="mypanel" ng-controller="ApplicantsController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Applicant Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+          <tab heading="Main" select="mainSelected(applicant)">
+	
+            <label class="control-label" for="title">Title</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.titleSelect" ng-model="applicant.title"/>
+            </div> 
+	
+            <label class="control-label" for="firstname">First Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.firstname" id="firstname" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="middlename">Middle Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.middlename" id="middlename" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="lastname">Last Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.lastname" id="lastname" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="gender">Gender</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="applicant.gender" btn-radio="1">Male</button>
+    <button type="button" class="btn btn-default" ng-model="applicant.gender" btn-radio="2">Female</button>
+</div>
+            </div> 
+	
+            <label class="control-label" for="contactable">Can Contact</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="applicant.contactable" btn-radio="true">Yes</button>
+    <button type="button" class="btn btn-default" ng-model="applicant.contactable" btn-radio="false">No</button>
+</div>
+
+            </div> 
+	
+            <label class="control-label" for="dob">Date of Birth</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.dob" id="dob" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+          </tab>
+
+          <tab heading="Contact" select="contactSelected(applicant)">
+	
+            <label class="control-label" for="email">Email</label> 
+            <div class="controls">
+            	<input type="email" ng-model="applicant.email" id="email" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="phone">Phone</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.phone" id="phone" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address1">Address1</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.address1" id="address1" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address2">Address2</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.address2" id="address2" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address3">Address3</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.address3" id="address3" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="city">City</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.city" id="city" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="state">State</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.stateSelect" ng-model="applicant.state"/>
+            </div> 
+	
+            <label class="control-label" for="postcode">Post Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.postcode" id="postcode" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="country">Country</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.countrySelect" ng-model="applicant.country"/>
+            </div> 
+	
+          </tab>
+
+          <tab heading="Education" select="educationSelected(applicant)">
+	
+            <label class="control-label" for="highschool">High School</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.highschool" id="highschool" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="highschoolDate">High School Graduation</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.highschoolDate" id="highschoolDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="highschoolResults">High School Results</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.highschoolResults" id="highschoolResults" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="university">University</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.university" id="university" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="universityDate">University Graduation</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.universityDate" id="universityDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="universityResults">University Results</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.universityResults" id="universityResults" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="postgrad">Post-Graduate</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.postgrad" id="postgrad" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="postgradDate">Post-Graduate Graduation</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.postgradDate" id="postgradDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="postgradResults">Post-Graduate Results</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.postgradResults" id="postgradResults" class="form-control"/>
+            </div> 
+	
+          </tab>
+
+          <tab heading="Experience" select="experienceSelected(applicant)">
+	
+            <label class="control-label" for="experience1">Experience 1</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience1" id="experience1" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="experience1StartDate">Experience 1 Start Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience1StartDate" id="experience1StartDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="experience1EndDate">Experience 1 End Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience1EndDate" id="experience1EndDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="experience2">Experience 2</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience2" id="experience2" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="experience2StartDate">Experience 2 Start Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience2StartDate" id="experience2StartDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="experience2EndDate">Experience 2 End Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience2EndDate" id="experience2EndDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="experience3">Experience 3</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience3" id="experience3" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="experience3StartDate">Experience 3 Start Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience3StartDate" id="experience3StartDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+            <label class="control-label" for="experience3EndDate">Experience 3 End Date</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.experience3EndDate" id="experience3EndDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+          </tab>
+
+          <tab heading="Job Preferences" select="preferencesSelected(applicant)">
+	
+            <label class="control-label" for="minSalary">Minimum Salary</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.minSalary" id="minSalary" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="partTime">Will take part-time work?</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="applicant.partTime" btn-radio="true">Yes</button>
+    <button type="button" class="btn btn-default" ng-model="applicant.partTime" btn-radio="false">No</button>
+</div>
+
+            </div> 
+	
+            <label class="control-label" for="preferredLocation">Preferred Location</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.preferredLocation" id="preferredLocation" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="availabilityDate">Date you can Start</label> 
+            <div class="controls">
+            	<input type="text" ng-model="applicant.availabilityDate" id="availabilityDate" data-date-format="dd/mm/yyyy" bs-datepicker /> 
+            </div> 
+	
+          </tab>
+
+        </tabset>
+
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

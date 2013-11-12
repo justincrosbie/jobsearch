@@ -1,0 +1,53 @@
+<div class="mypanel" ng-controller="ApplicantsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Applicant</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Title: {{ applicant.title.name }}</p>
+      <p>First Name: {{ applicant.firstname }}</p>
+      <p>Middle Name: {{ applicant.middlename }}</p>
+      <p>Last Name: {{ applicant.lastname }}</p>
+      <p>Gender: {{ applicant.gender }}</p>
+      <p>Can Contact: {{ applicant.contactable }}</p>
+      <p>Date of Birth: {{ applicant.dob }}</p>
+      <p>Email: {{ applicant.email }}</p>
+      <p>Phone: {{ applicant.phone }}</p>
+      <p>Address1: {{ applicant.address1 }}</p>
+      <p>Address2: {{ applicant.address2 }}</p>
+      <p>Address3: {{ applicant.address3 }}</p>
+      <p>City: {{ applicant.city }}</p>
+      <p>State: {{ applicant.state.name }}</p>
+      <p>Post Code: {{ applicant.postcode }}</p>
+      <p>Country: {{ applicant.country.name }}</p>
+      <p>High School: {{ applicant.highschool }}</p>
+      <p>High School Graduation: {{ applicant.highschoolDate }}</p>
+      <p>High School Results: {{ applicant.highschoolResults }}</p>
+      <p>University: {{ applicant.university }}</p>
+      <p>University Graduation: {{ applicant.universityDate }}</p>
+      <p>University Results: {{ applicant.universityResults }}</p>
+      <p>Post-Graduate: {{ applicant.postgrad }}</p>
+      <p>Post-Graduate Graduation: {{ applicant.postgradDate }}</p>
+      <p>Post-Graduate Results: {{ applicant.postgradResults }}</p>
+      <p>Experience 1: {{ applicant.experience1 }}</p>
+      <p>Experience 1 Start Date: {{ applicant.experience1StartDate }}</p>
+      <p>Experience 1 End Date: {{ applicant.experience1EndDate }}</p>
+      <p>Experience 2: {{ applicant.experience2 }}</p>
+      <p>Experience 2 Start Date: {{ applicant.experience2StartDate }}</p>
+      <p>Experience 2 End Date: {{ applicant.experience2EndDate }}</p>
+      <p>Experience 3: {{ applicant.experience3 }}</p>
+      <p>Experience 3 Start Date: {{ applicant.experience3StartDate }}</p>
+      <p>Experience 3 End Date: {{ applicant.experience3EndDate }}</p>
+      <p>Minimum Salary: {{ applicant.minSalary }}</p>
+      <p>Will take part-time work?: {{ applicant.partTime }}</p>
+      <p>Preferred Location: {{ applicant.preferredLocation }}</p>
+      <p>Date you can Start: {{ applicant.availabilityDate }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/applicants">View all Applicants</a>
+  </ul>
+</div>

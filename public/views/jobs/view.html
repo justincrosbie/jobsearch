@@ -1,0 +1,23 @@
+<div class="mypanel" ng-controller="JobsController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Job</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ job.name }}</p>
+      <p>Start Date: {{ job.start }}</p>
+      <p>End Date: {{ job.end }}</p>
+      <p>Industry: {{ job.industry.name }}</p>
+      <p>Category: {{ job.category.name }}</p>
+      <p>Employer: {{ job.employer.name }}</p>
+      <p>Site: {{ job.site.name }}</p>
+      <p>Successful Applicant: {{ job.applicant.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/jobs">View all Jobs</a>
+  </ul>
+</div>

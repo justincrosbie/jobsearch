@@ -1,0 +1,59 @@
+<div class="mypanel" ng-controller="ApplicantsController" ng-init="findPaged()">
+  <ul>
+    <div class="page-header">
+      <h1>Applicants</h1>
+    </div>
+  </ul>
+  <ul>
+      <div class="row">
+          <div class="col-md-6">
+            <form class="form-inline" role="form" ng-submit="findPaged()">
+              <div class="form-group">
+                <label class="sr-only" for="query">Search for Applicant</label>
+                <input type="text" class="form-control" ng-model="query" id="query" placeholder="Enter firstname middlename lastname">
+              </div>
+              <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+          </div>
+          
+          
+      </div>
+  </ul>
+  <ul>
+      <table class="table tablesorter table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="header" ng-class="sortClass.title" ng-click="changeSort('title')">Title</th>
+              <th class="header" ng-class="sortClass.firstname" ng-click="changeSort('firstname')">First Name</th>
+              <th class="header" ng-class="sortClass.middlename" ng-click="changeSort('middlename')">Middle Name</th>
+              <th class="header" ng-class="sortClass.lastname" ng-click="changeSort('lastname')">Last Name</th>
+              
+              
+              <th/>
+              <th/>
+            </tr>
+          </thead>
+          <tr ng-repeat="applicant in applicants">
+            <td><a href="#!/applicants/{{ applicant._id }}">{{applicant.title.name}}</a></td>
+            <td><a href="#!/applicants/{{ applicant._id }}">{{applicant.firstname}}</a></td>
+            <td><a href="#!/applicants/{{ applicant._id }}">{{applicant.middlename}}</a></td>
+            <td><a href="#!/applicants/{{ applicant._id }}">{{applicant.lastname}}</a></td>
+            
+              
+            <td><a href="#!/applicants/{{ applicant._id }}/edit">Edit</a></td>
+            <td><a href="" ng-click="remove(applicant)" >Remove</a></td>
+          </tr>
+      </table>
+  </ul>
+  <ul>
+    <pre>Total: {{totalItems}}</pre>
+  </ul>
+  <ul ng-show="totalItems > 10">
+    <pagination total-items="totalItems" page="currentPage" max-size="maxSize" class="pagination-small" 
+      boundary-links="true" rotate="false" num-pages="numPages" on-select-page="pageChanged(page)" >
+    </pagination>
+  </ul>
+  <ul>
+    <a href="#!/applicants/create" class="btn btn-primary">Create a new Applicant</a>
+  </ul>
+</div>

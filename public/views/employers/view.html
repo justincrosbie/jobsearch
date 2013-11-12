@@ -1,0 +1,30 @@
+<div class="mypanel" ng-controller="EmployersController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View Employer</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Title: {{ employer.title.name }}</p>
+      <p>First Name: {{ employer.firstname }}</p>
+      <p>Middle Name: {{ employer.middlename }}</p>
+      <p>Last Name: {{ employer.lastname }}</p>
+      <p>Gender: {{ employer.gender }}</p>
+      <p>Can Contact: {{ employer.contactable }}</p>
+      <p>Email: {{ employer.email }}</p>
+      <p>Phone: {{ employer.phone }}</p>
+      <p>Address1: {{ employer.address1 }}</p>
+      <p>Address2: {{ employer.address2 }}</p>
+      <p>Address3: {{ employer.address3 }}</p>
+      <p>City: {{ employer.city }}</p>
+      <p>State: {{ employer.state.name }}</p>
+      <p>Post Code: {{ employer.postcode }}</p>
+      <p>Country: {{ employer.country.name }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/employers">View all Employers</a>
+  </ul>
+</div>

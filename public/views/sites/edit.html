@@ -1,0 +1,80 @@
+<div class="mypanel" ng-controller="SitesController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Site Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+        </tabset>
+
+	
+            <label class="control-label" for="name">Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.name" id="name" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="phone">Phone</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.phone" id="phone" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address1">Address1</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.address1" id="address1" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address2">Address2</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.address2" id="address2" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address3">Address3</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.address3" id="address3" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="city">City</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.city" id="city" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="state">State</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.stateSelect" ng-model="site.state"/>
+            </div> 
+	
+            <label class="control-label" for="postcode">Post Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.postcode" id="postcode" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="country">Country</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.countrySelect" ng-model="site.country"/>
+            </div> 
+	
+            <label class="control-label" for="latitude">Latitude</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.latitude" id="latitude" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="longitude">Longitude</label> 
+            <div class="controls">
+            	<input type="text" ng-model="site.longitude" id="longitude" class="form-control"/>
+            </div> 
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+

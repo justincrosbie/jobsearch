@@ -1,0 +1,17 @@
+<div class="mypanel" ng-controller="StatesController" ng-init="findOne()">
+  <ul>
+    <div class="page-header">
+      <h1>View State</h1>
+    </div>
+  </ul>
+  <ul>
+    <div  class="well well-small">
+      <p>Name: {{ state.name }}</p>
+      <p>Abbreviation: {{ state.abbr }}</p>
+
+    </div>
+  </ul>
+  <ul>
+	  <a href="#!/states">View all States</a>
+  </ul>
+</div>

@@ -1,0 +1,115 @@
+<div class="mypanel" ng-controller="EmployersController"> 
+  <ul>
+    <div class="page-header">
+      <h1>Employer Details</h1>
+    </div>
+  </ul>
+  <ul>
+    <form class="form-vertical" ng-submit="update()" ng-init="findOne()"> 
+      <div class="form-group">
+        <tabset>
+
+
+          <tab heading="Main" select="mainSelected(employer)">
+	
+            <label class="control-label" for="title">Title</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.titleSelect" ng-model="employer.title"/>
+            </div> 
+	
+            <label class="control-label" for="firstname">First Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.firstname" id="firstname" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="middlename">Middle Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.middlename" id="middlename" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="lastname">Last Name</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.lastname" id="lastname" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="gender">Gender</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="employer.gender" btn-radio="1">Male</button>
+    <button type="button" class="btn btn-default" ng-model="employer.gender" btn-radio="2">Female</button>
+</div>
+            </div> 
+	
+            <label class="control-label" for="contactable">Can Contact</label> 
+            <div class="controls">
+            	<div class="btn-group">
+    <button type="button" class="btn btn-default" ng-model="employer.contactable" btn-radio="true">Yes</button>
+    <button type="button" class="btn btn-default" ng-model="employer.contactable" btn-radio="false">No</button>
+</div>
+
+            </div> 
+	
+          </tab>
+
+          <tab heading="Contact" select="contactSelected(employer)">
+	
+            <label class="control-label" for="email">Email</label> 
+            <div class="controls">
+            	<input type="email" ng-model="employer.email" id="email" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="phone">Phone</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.phone" id="phone" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address1">Address1</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.address1" id="address1" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address2">Address2</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.address2" id="address2" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="address3">Address3</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.address3" id="address3" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="city">City</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.city" id="city" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="state">State</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.stateSelect" ng-model="employer.state"/>
+            </div> 
+	
+            <label class="control-label" for="postcode">Post Code</label> 
+            <div class="controls">
+            	<input type="text" ng-model="employer.postcode" id="postcode" class="form-control"/>
+            </div> 
+	
+            <label class="control-label" for="country">Country</label> 
+            <div class="controls">
+            	<input type="hidden" ui-select2="global.countrySelect" ng-model="employer.country"/>
+            </div> 
+	
+          </tab>
+
+        </tabset>
+
+	
+      </div> 
+      <div class="form-group"> 
+        <div class="controls"> 
+          <input type="submit" class="btn btn-primary"> 
+        </div> 
+      </div> 
+    </form>
+  </ul>
+</div>
+
