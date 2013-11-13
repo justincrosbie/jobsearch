@@ -16,6 +16,10 @@ window.angular.module('ngff.controllers.map', [])
 			  }));
 			}
           }
+
+          if ( $scope.myMarkers && $scope.myMarkers.length > 0 ) {
+          	$scope.myMap.panTo($scope.myMarkers[0].getPosition());
+      	  }
         });
       };
 
